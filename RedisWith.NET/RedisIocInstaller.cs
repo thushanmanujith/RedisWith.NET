@@ -1,4 +1,5 @@
-﻿using StackExchange.Redis;
+﻿using Redis.Persistence;
+using StackExchange.Redis;
 
 namespace RedisWith.NET
 {
@@ -11,6 +12,7 @@ namespace RedisWith.NET
             var multiplexer = ConnectionMultiplexer.Connect(connectionStr);
             services.AddSingleton<IConnectionMultiplexer>(multiplexer);
 
+            services.AddScoped<IRedisPersistence, RedisPersistence>();
         }
     }
 }
