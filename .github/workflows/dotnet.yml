@@ -25,5 +25,6 @@ jobs:
       working-directory: src/RedisWith.NET
     - name: Build
       run: dotnet build --no-restore
+      working-directory: src/RedisWith.NET
     - name: Test
       run: dotnet test --no-build --verbosity normal
